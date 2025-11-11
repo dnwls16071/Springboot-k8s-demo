@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: springboot-demo
+  name: springboot-app-config
+  labels:
+    part-of: springboot-k8s-cicd
+    component: backend-server
+    name: springboot-app
+    version: 1.0.0
+    managed-by: kubectl
+data:
+  spring_profiles_active: "dev"
+  server_port: "8081"

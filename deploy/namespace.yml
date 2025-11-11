@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: springboot-demo
+  labels:
+    part-of: springboot-k8s-cicd
+    managed-by: kubectl

@@ -1,0 +1,47 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.idea
+.vscode
+*.iml
+*.ipr
+*.iws
+
+# Build outputs
+build/
+target/
+out/
+bin/
+
+# Gradle
+.gradle/
+gradle-wrapper.jar
+
+# Documentation
+*.md
+HELP.md
+docs/
+
+# Deployment files
+deploy/
+k8s/
+
+# CI/CD
+Jenkinsfile
+.github/
+.gitlab-ci.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
