@@ -2,7 +2,8 @@
 FROM gradle:8.5-jdk17 AS builder
 WORKDIR /build
 COPY --chown=gradle:gradle . .
-RUN gradle clean build -x test --no-daemon
+RUN gradle clean build -x test --no-daemon && \
+    rm -f /build/build/libs/*-plain.jar
 
 # Runtime stage
 FROM eclipse-temurin:17-jre-alpine
@@ -11,7 +12,7 @@ WORKDIR /app
 # Create non-root user
 RUN addgroup -S spring && adduser -S spring -G spring
 
-# Copy built artifact from builder stage
+# Copy built artifact from builder stage (이제 boot jar만 존재)
 COPY --from=builder /build/build/libs/*.jar app.jar
 
 # Change ownership
